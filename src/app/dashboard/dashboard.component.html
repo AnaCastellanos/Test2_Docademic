@@ -1,0 +1,19 @@
+<div class="grid-container">
+  <h1 class="mat-h1">Tasks List</h1>
+  <mat-grid-list cols="2" rowHeight="350px">
+    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
+      <mat-card class="dashboard-card">
+        <mat-card-content class="dashboard-card-content content-list" >
+          <mat-selection-list #tasks >
+            <mat-list-option *ngFor="let task of tasksArray">
+              {{task}}
+            </mat-list-option>
+          </mat-selection-list>
+          <button style="margin-left: 15px;" mat-mini-fab>
+            <mat-icon>add</mat-icon>
+          </button>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
